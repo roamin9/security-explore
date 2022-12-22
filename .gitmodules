@@ -1,0 +1,3 @@
+[submodule "tfsec-example-project"]
+	path = tfsec-example-project
+	url = https://github.com/tfsec/tfsec-example-project
