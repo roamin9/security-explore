@@ -1,0 +1,382 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "informationUri": "https://github.com/aquasecurity/defsec",
+          "name": "defsec",
+          "rules": [
+            {
+              "id": "aws-rds-enable-deletion-protection",
+              "shortDescription": {
+                "text": "RDS Deletion Protection Disabled"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/rds/enable-deletion-protection/"
+            },
+            {
+              "id": "aws-rds-enable-iam-auth",
+              "shortDescription": {
+                "text": "RDS IAM Database Authentication Disabled"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/rds/enable-iam-auth/"
+            },
+            {
+              "id": "aws-rds-enable-performance-insights",
+              "shortDescription": {
+                "text": "Enable Performance Insights to detect potential problems"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/rds/enable-performance-insights/"
+            },
+            {
+              "id": "aws-rds-encrypt-instance-storage-data",
+              "shortDescription": {
+                "text": "RDS encryption has not been enabled at a DB Instance level."
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/rds/encrypt-instance-storage-data/"
+            },
+            {
+              "id": "aws-rds-specify-backup-retention",
+              "shortDescription": {
+                "text": "RDS Cluster and RDS instance should have backup retention longer than default 1 day"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/rds/specify-backup-retention/"
+            },
+            {
+              "id": "aws-s3-block-public-acls",
+              "shortDescription": {
+                "text": "S3 Access block should block public ACL"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/block-public-acls/"
+            },
+            {
+              "id": "aws-s3-block-public-policy",
+              "shortDescription": {
+                "text": "S3 Access block should block public policy"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/block-public-policy/"
+            },
+            {
+              "id": "aws-s3-enable-bucket-logging",
+              "shortDescription": {
+                "text": "S3 Bucket does not have logging enabled."
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/enable-bucket-logging/"
+            },
+            {
+              "id": "aws-s3-enable-versioning",
+              "shortDescription": {
+                "text": "S3 Data should be versioned"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/enable-versioning/"
+            },
+            {
+              "id": "aws-s3-encryption-customer-key",
+              "shortDescription": {
+                "text": "S3 encryption should use Customer Managed Keys"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/encryption-customer-key/"
+            },
+            {
+              "id": "aws-s3-ignore-public-acls",
+              "shortDescription": {
+                "text": "S3 Access Block should Ignore Public Acl"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/ignore-public-acls/"
+            },
+            {
+              "id": "aws-s3-no-public-buckets",
+              "shortDescription": {
+                "text": "S3 Access block should restrict public bucket to limit access"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/no-public-buckets/"
+            },
+            {
+              "id": "aws-s3-specify-public-access-block",
+              "shortDescription": {
+                "text": "S3 buckets should each define an aws_s3_bucket_public_access_block"
+              },
+              "helpUri": "https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/s3/specify-public-access-block/"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "aws-rds-enable-deletion-protection",
+          "ruleIndex": 0,
+          "level": "warning",
+          "message": {
+            "text": "Instance does not have Deletion Protection enabled"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../../../../../../terraform-aws-modules/rds/aws/modules/db_instance/main.tf"
+                },
+                "region": {
+                  "startLine": 90,
+                  "endLine": 90
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-rds-enable-iam-auth",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Instance does not have IAM Authentication enabled"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "../../../../../../terraform-aws-modules/rds/aws/modules/db_instance/main.tf"
+                },
+                "region": {
+                  "startLine": 57,
+                  "endLine": 57
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-rds-enable-performance-insights",
+          "ruleIndex": 2,
+          "level": "note",
+          "message": {
+            "text": "Instance does not have performance insights enabled."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "database.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-rds-encrypt-instance-storage-data",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Instance does not have storage encryption enabled."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "database.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-rds-specify-backup-retention",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Instance has very low backup retention period."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "database.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-block-public-acls",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "No public access block so not blocking public acls"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-block-public-policy",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "No public access block so not blocking public policies"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-enable-bucket-logging",
+          "ruleIndex": 7,
+          "level": "warning",
+          "message": {
+            "text": "Bucket does not have logging enabled"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-enable-versioning",
+          "ruleIndex": 8,
+          "level": "warning",
+          "message": {
+            "text": "Bucket does not have versioning enabled"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-encryption-customer-key",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Bucket does not encrypt data with a customer managed key."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-ignore-public-acls",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "No public access block so not ignoring public acls"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-no-public-buckets",
+          "ruleIndex": 11,
+          "level": "error",
+          "message": {
+            "text": "No public access block so not restricting public buckets"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aws-s3-specify-public-access-block",
+          "ruleIndex": 12,
+          "level": "note",
+          "message": {
+            "text": "Bucket does not have a corresponding public access block."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.tf"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 7
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
